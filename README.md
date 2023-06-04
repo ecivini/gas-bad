@@ -109,7 +109,7 @@ Gas consumption evaluation of Ownable related operations provided by the tested 
 
 | Function Name     | OpenZeppelin | Solady | Solmate | Gas Efficiency |
 |-------------------|---------------|------------------|--------------------|----------------|
-| owner             | 2298          | 2355             | 2279               | OpenZeppelin      |
+| owner             | 2298          | 2355             | 2279               | Solmate      |
 | renounceOwnership | 5486          | 5472             | -                  | Solady  |
 | transferOwnership | 6955          | 7002             | 6785               | Solmate |
 
