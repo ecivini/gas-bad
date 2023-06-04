@@ -8,7 +8,7 @@ Gas consumption is a critical factor in Ethereum smart contract development. Eff
 
 ## 📚 Libraries Tested
 
-Currently, GasBad focuses on testing the gas usage of the following Solidity libraries:
+Currently, GasBad focuses on testing (**only**) the gas usage of the following Solidity libraries:
 
 - OpenZeppelin: A widely-used library for secure and community-audited smart contract development.
 - Solady: A Solidity library known for its gas optimization techniques and efficiency enhancements.
