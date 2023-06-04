@@ -2,7 +2,7 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-gas_reports = ["SoladyToken", "OZToken"]
+gas_reports = ["*"]
 solc-version = "0.8.20"
 via_ir = true
 
