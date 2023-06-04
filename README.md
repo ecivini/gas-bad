@@ -106,13 +106,6 @@ TODO
 </details>
 
 <details>
-<summary>ERC1155</summary>
-
-TODO
-
-</details>
-
-<details>
 <summary>ERC4626</summary>
 
 TODO
