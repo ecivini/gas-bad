@@ -101,7 +101,41 @@ Gas consumption evaluation of ERC721 token-related operations provided by the te
 <details>
 <summary>ERC1155</summary>
 
-TODO
+Gas consumption evaluation of ERC1155 token-related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for ERC1155 functionality.
+
+**Gas Usage Comparison**:
+
+| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-----------------|-----------|---------------|----------------|----------------|
+| balanceOf       | 2547      | 2407          | 2485           | Solady  |
+| balanceOfBatch  | 16106     | 12566         | 14317          | Solady  |
+| burn            | 8784      | 8064          | 8156           | Solady  |
+| burnBatch       | 36684     | 33635         | 35648          | Solady  |
+| isApprovedForAll| 778       | 681           | 783            | Solady  |
+| mint            | 28155     | 27712         | 27871          | Solady  |
+| mintBatch       | 124178    | 121891        | 124104         | Solady  |
+| safeBatchTransferFrom | 151145 | 146637    | 148209         | Solady  |
+| safeTransferFrom | 34027    | 33141         | 33458          | Solady  |
+| setApprovalForAll | 24506   | 24367         | 24487          | Solady  |
+| uri             | 2945      | 540           | 566            | Solady  |
+
+
+**Gas Efficiency Comparison (%)**:
+
+| Function Name       | Solmate vs Solady (%) | Solmate vs OpenZeppelin (%) | Solady vs OpenZeppelin (%) |
+|---------------------|----------------------|-----------------------------|----------------------------|
+| balanceOf           | -1.92                | -23.12                      | -25.55                     |
+| balanceOfBatch      | -2.51                | -28.64                      | -31.75                     |
+| burn                | -1.11                | -19.08                      | -20.13                     |
+| burnBatch           | -0.39                | -19.07                      | -18.71                     |
+| isApprovedForAll    | -0.76                | -26.84                      | -27.48                     |
+| mint                | -0.52                | -18.48                      | -18.01                     |
+| mintBatch           | -0.22                | -19.35                      | -19.14                     |
+| safeBatchTransferFrom | -1.48              | -19.55                      | -18.43                     |
+| safeTransferFrom    | -1.41                | -18.25                      | -16.99                     |
+| setApprovalForAll   | -1.33                | -26.04                      | -24.99                     |
+| uri                 | 0.51                 | -5.16                       | -5.64                      |
+
 
 </details>
 
