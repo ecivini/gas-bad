@@ -43,19 +43,6 @@ Gas consumption evaluation of ERC20 token-related operations provided by the tes
 | transfer      | 29567        | 29541       | 29666            | Solady    |
 | transferFrom  | 20234        | 20021       | 21828            | Solady    |
 
-**Gas Efficiency Comparison (%)**:
-
-| Function Name | Solmate vs Solady (%) | Solmate vs OpenZeppelin (%) | Solady vs OpenZeppelin (%) |
-|---------------|--------------------------------|---------------------------------------|--------------------------------------|
-| allowance     | 5.21                           | 2.67                                  | -2.55                                |
-| approve       | -0.17                          | -0.34                                 | -0.70                                |
-| decimals      | 3.02                           | 1.15                                  | -1.53                                |
-| name          | 448.40                         | 2.69                                  | -93.73                               |
-| symbol        | 317.98                         | 3.31                                  | -91.76                               |
-| totalSupply   | 0.09                           | -0.15                                 | -0.23                                |
-| transfer      | 0.09                           | -0.08                                 | -0.32                                |
-| transferFrom  | 1.06                           | -7.20                                 | -7.49                                |
-
 
 </details>
 
@@ -79,22 +66,6 @@ Gas consumption evaluation of ERC721 token-related operations provided by the te
 | symbol          | 3134    | 747    | 768          | Solady         |
 | tokenURI        | 850     | 835    | 850          | Solady         |
 | transferFrom    | 22515   | 20319  | 23352        | Solady         |
-
-**Gas Efficiency Comparison (%)**:
-
-| Function Name   | Solmate vs Solady (%) | Solmate vs OpenZeppelin (%) | Solady vs OpenZeppelin (%) |
-|-----------------|----------------------|-----------------------------|----------------------------|
-| approve         | 0.97                 | -1.74                       | -2.70                      |
-| balanceOf       | 1.98                 | 0.00                         | -1.88                      |
-| burn            | 1.32                 | -6.68                       | -8.41                      |
-| getApproved     | -24.22               | -41.15                      | -33.57                     |
-| isApprovedForAll| 3.90                 | 0.00                         | -3.90                      |
-| mint            | 0.38                 | -0.07                       | -0.48                      |
-| name            | 81.54                | 81.35                       | 0.23                       |
-| setApprovalForAll| 0.54                | -0.97                       | -1.30                      |
-| symbol          | 76.02                | 75.82                       | -0.26                      |
-| tokenURI        | 1.80                 | 0.00                         | -1.80                      |
-| transferFrom    | 9.87                 | -13.10                      | -23.80                     |
 
 </details>
 
@@ -120,23 +91,6 @@ Gas consumption evaluation of ERC1155 token-related operations provided by the t
 | uri             | 2945      | 540           | 566            | Solady  |
 
 
-**Gas Efficiency Comparison (%)**:
-
-| Function Name       | Solmate vs Solady (%) | Solmate vs OpenZeppelin (%) | Solady vs OpenZeppelin (%) |
-|---------------------|----------------------|-----------------------------|----------------------------|
-| balanceOf           | -1.92                | -23.12                      | -25.55                     |
-| balanceOfBatch      | -2.51                | -28.64                      | -31.75                     |
-| burn                | -1.11                | -19.08                      | -20.13                     |
-| burnBatch           | -0.39                | -19.07                      | -18.71                     |
-| isApprovedForAll    | -0.76                | -26.84                      | -27.48                     |
-| mint                | -0.52                | -18.48                      | -18.01                     |
-| mintBatch           | -0.22                | -19.35                      | -19.14                     |
-| safeBatchTransferFrom | -1.48              | -19.55                      | -18.43                     |
-| safeTransferFrom    | -1.41                | -18.25                      | -16.99                     |
-| setApprovalForAll   | -1.33                | -26.04                      | -24.99                     |
-| uri                 | 0.51                 | -5.16                       | -5.64                      |
-
-
 </details>
 
 <details>
@@ -149,7 +103,16 @@ TODO
 <details>
 <summary>Ownable</summary>
 
-TODO
+Gas consumption evaluation of Ownable related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
+
+**Gas Usage Comparison**:
+
+| Function Name     | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-------------------|---------------|------------------|--------------------|----------------|
+| owner             | 2298          | 2355             | 2279               | OpenZeppelin      |
+| renounceOwnership | 5486          | 5472             | -                  | Solady  |
+| transferOwnership | 6955          | 7002             | 6785               | Solmate |
+
 
 </details>
 
