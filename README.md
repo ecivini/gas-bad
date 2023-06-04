@@ -20,9 +20,9 @@ GasBad conducts gas efficiency tests using Forge 0.2.0 with via-IR optimizations
 
 It is important to note that the project's current structure is designed for the sole purpose of conducting these gas efficiency tests and does not adhere to best practices for secure smart contract development. This structure is chosen for its simplicity and the ease of obtaining gas reports using Foundry.
 
-## 📊 Testing Categories
+## 📊 Tested contracts
 
-GasBad evaluates the gas efficiency of libraries across different categories. Here are the categories currently tested:
+GasBad evaluates the gas efficiency of libraries across different contracts. Here are the ones currently tested:
 
 <details>
 <summary>ERC20</summary>
