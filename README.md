@@ -119,7 +119,14 @@ Gas consumption evaluation of Ownable related operations provided by the tested 
 <details>
 <summary>ECDSA</summary>
 
-TODO
+Gas consumption evaluation of ECDSA related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionalities.
+
+**Gas Usage Comparison**:
+
+| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-----------------|-----------|---------------|----------------|----------------|
+| recover       | 3935      | 3741          | -           | Solady  |
+| toEthSignedMessage  | 252     | 255         | -          | OpenZeppelin  |
 
 </details>
 
