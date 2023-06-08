@@ -133,7 +133,15 @@ TODO
 <details>
 <summary>Base64</summary>
 
-TODO
+Gas consumption evaluation of Base64 related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
+
+**Gas Usage Comparison**:
+
+| Function Name     | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-------------------|---------------|------------------|--------------------|----------------|
+| encode             | 2599          | 1925             | -               | Solady      |
+| decode             | -          | 1786             | -                  | Solady  |
+
 
 </details>
 
