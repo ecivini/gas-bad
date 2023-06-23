@@ -7,5 +7,7 @@ contract OZRoleAccess is AccessControl {
   /**
     * @notice Constructor
     */
-  constructor () { }
+  constructor () { 
+    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+  }
 }

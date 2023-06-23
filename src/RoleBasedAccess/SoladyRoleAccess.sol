@@ -7,5 +7,7 @@ contract SoladyRoleAccess is OwnableRoles {
   /**
     * @notice Constructor
     */
-  constructor () { }
+  constructor () {
+    _initializeOwner(msg.sender);
+  }
 }
