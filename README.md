@@ -117,6 +117,22 @@ Gas consumption evaluation of Ownable related operations provided by the tested 
 </details>
 
 <details>
+<summary>RoleBasedAccess</summary>
+
+Gas consumption evaluation of RoleBasedAccess contracts related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
+
+**Gas Usage Comparison**:
+
+| Function Name     | OpenZeppelin | Solady            | Solmate            | Gas Efficiency |
+|-------------------|---------------|------------------|--------------------|----------------|
+| owner             | 2363          | 2546             | 2444               | OpenZeppelin   |
+| grantRole         | 29178         | 26096            | 18915              | Solmate        |
+| revokeRole        | 7146          | 6323             | 18915              | Solady         |
+
+
+</details>
+
+<details>
 <summary>ECDSA</summary>
 
 Gas consumption evaluation of ECDSA related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionalities.
