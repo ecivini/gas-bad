@@ -121,6 +121,11 @@ Gas consumption evaluation of Ownable related operations provided by the tested 
 
 Gas consumption evaluation of RoleBasedAccess contracts related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
 
+> Note: *In order to be specific, it uses the following contracts for comparisons:*
+> 1. **AccessControl.sol** from Openzeppelin
+> 2. **OwnableRoles** from Solady
+> 3. **RolesAuthority** from Solmate
+> 
 **Gas Usage Comparison**:
 
 | Function Name     | OpenZeppelin | Solady            | Solmate            | Gas Efficiency |
