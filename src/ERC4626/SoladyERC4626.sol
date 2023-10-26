@@ -1,68 +1,70 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "lib/solady/src/tokens/ERC4626.sol";
+import {ERC20, ERC4626} from "lib/solady/src/tokens/ERC4626.sol";
 
 contract SoladyRC4626 is ERC4626 {
-    
+    bool public immutable useVirtualShares;
+    uint8 public immutable decimalsOffset;
+
+    address internal immutable _underlying;
+    uint8 internal immutable _decimals;
+
+    string internal _name;
+    string internal _symbol;
+
     /**
      * @notice Constructor
      */
-    constructor () ERC4626("Test4626", "TEST4626") { 
-        _mint(msg.sender, 0);
-        _mint(msg.sender, 1);
-        _mint(msg.sender, 2);
-        _mint(msg.sender, 3);
-        _mint(msg.sender, 5);
+    constructor (
+        address underlying_,
+        string memory name_,
+        string memory symbol_,
+        bool useVirtualShares_,
+        uint8 decimalsOffset_
+    )  { 
+        _underlying = underlying_;
+        (bool success, uint8 result) = _tryGetAssetDecimals(underlying_);
+        _decimals = success ? result : _DEFAULT_DECIMALS_OFFSET;
+
+        _name = name_;
+        _symbol = symbol_;
+
+        useVirtualShares = useVirtualShares_;
+        decimalsOffset = decimalsOffset_;
+    }
+
+    /**
+     * @notice Returns the name of the underlying asset
+     */
+    function asset() public view virtual override returns (address) {
+        return _underlying;
     }
 
     /**
      * @notice Returns the name of the token
      */
-    function name() public pure override returns (string memory) {
-        return "Test";
+    function name() public view override returns (string memory) {
+        return _name;
     }
 
     /**
      * @notice Returns the symbol of the token
      */
-    function symbol() public pure override returns (string memory) {
-        return "TEST";
+    function symbol() public view override returns (string memory) {
+        return _symbol;
     }
 
-
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        return "ipfs://...";
+    function _useVirtualShares() internal view virtual override returns (bool) {
+        return useVirtualShares;
     }
 
-    /**
-     * @notice Mint a token to the specified address
-     * @param _to Receiver address
-     * @param _tokenId Id of the token to mint
-     */
-    function mint(address _to, uint _tokenId) external {
-        _mint(_to, _tokenId);
+    function _underlyingDecimals() internal view virtual override returns (uint8) {
+        return _decimals;
     }
 
-    /**
-     * @notice Safely mint a token to the specified address
-     * @param _to Receiver address
-     * @param _tokenId Id of the token to mint
-     */
-    function safeMint(address _to, uint _tokenId) external {
-        _safeMint(_to, _tokenId);
+    function _decimalsOffset() internal view virtual override returns (uint8) {
+        return decimalsOffset;
     }
-
-    /**
-     * @notice Burn a token
-     * @param _tokenId Id of the token to burn
-     */
-    function burn(uint _tokenId) external {
-        _burn(_tokenId);
-    }
-
-    /// _baseURI override
-    function _baseURI() internal view override returns (string memory) {
-        return "ipfs://.../";
-    }
+    
 }
