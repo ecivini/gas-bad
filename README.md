@@ -171,8 +171,19 @@ Gas consumption evaluation of ECDSA related operations provided by the tested li
 <details>
 <summary>MerkleProof</summary>
 
-TODO
-
+| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-----------------|-----------|---------------|----------------|----------------|
+| verify1         | | | | |
+| verify5         | | | | |
+| verify10        | | | | |
+| verify15        | | | | |
+| verify20        | | | | |
+| verifyCalldata1 | | | | |
+| verifyCalldata5 | | | | |
+| verifyCalldata15 | | | | |
+| verifyCalldata20 | | | | |
+| multiProof      | | | | |
+| multiProofCalldata | | | | |
 </details>
 
 <details>
