@@ -3,10 +3,7 @@ pragma solidity ^0.8.20;
 
 import {ERC20, ERC4626} from "lib/solady/src/tokens/ERC4626.sol";
 
-contract SoladyRC4626 is ERC4626 {
-    bool public immutable useVirtualShares;
-    uint8 public immutable decimalsOffset;
-
+contract SoladyERC4626 is ERC4626 {
     address internal immutable _underlying;
     uint8 internal immutable _decimals;
 
@@ -19,9 +16,7 @@ contract SoladyRC4626 is ERC4626 {
     constructor (
         address underlying_,
         string memory name_,
-        string memory symbol_,
-        bool useVirtualShares_,
-        uint8 decimalsOffset_
+        string memory symbol_
     )  { 
         _underlying = underlying_;
         (bool success, uint8 result) = _tryGetAssetDecimals(underlying_);
@@ -29,9 +24,6 @@ contract SoladyRC4626 is ERC4626 {
 
         _name = name_;
         _symbol = symbol_;
-
-        useVirtualShares = useVirtualShares_;
-        decimalsOffset = decimalsOffset_;
     }
 
     /**
@@ -55,16 +47,8 @@ contract SoladyRC4626 is ERC4626 {
         return _symbol;
     }
 
-    function _useVirtualShares() internal view virtual override returns (bool) {
-        return useVirtualShares;
-    }
-
     function _underlyingDecimals() internal view virtual override returns (uint8) {
         return _decimals;
     }
 
-    function _decimalsOffset() internal view virtual override returns (uint8) {
-        return decimalsOffset;
-    }
-    
 }

@@ -12,9 +12,7 @@ contract SolmateERC4626 is ERC4626 {
     constructor (
         ERC20 asset_,
         string memory name_,
-        string memory symbol_,
-        bool useVirtualShares_,
-        uint8 decimalsOffset_
+        string memory symbol_
     ) ERC4626(asset_, name_, symbol_) { }
 
     function totalAssets() public view override returns (uint256) {
