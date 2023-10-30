@@ -96,7 +96,24 @@ Gas consumption evaluation of ERC1155 token-related operations provided by the t
 <details>
 <summary>ERC4626</summary>
 
-TODO
+Gas consumption evaluation of ERC4626 vault-related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for ERC4626 functionality.
+
+**Gas Usage Comparison**:
+
+| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|-----------------|-----------|---------------|----------------|----------------|
+| balanceOf       | 756       | 705           | 707            | Solady |
+| convertToAssets | 1544      | 1286          | 361 - 1424     | Solmate if totalSupply is zero else Solady |
+| deposit         | 62699     | 60093         | 59628          | Solmate        |
+| mint            | 62802     | 60199         | 59652          | Solmate        |
+| name            | 2886      | 2840          | 2922           | Solady         |
+| previewDeposit  | 2119      | 1875          | 1972           | Solady         |
+| previewWithdraw | 1666      | 1396          | 1497           | Solady         |
+| redeem          | 24849     | 23901         | 23944          | Solady         |
+| symbol          | 3226      | 3195          | 3252           | Solady         |
+| totalAssets     | 1139      | 912           | 1133           | Solady         |
+| totalSupply     | 383       | 380           | 380            | Solmate/Solady | 
+| withdraw        | 25958     | 24792         | 23922          | Solmate        |
 
 </details>
 
