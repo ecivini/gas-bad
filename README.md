@@ -171,19 +171,23 @@ Gas consumption evaluation of ECDSA related operations provided by the tested li
 <details>
 <summary>MerkleProof</summary>
 
-| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
-|-----------------|-----------|---------------|----------------|----------------|
-| verify1         | | | | |
-| verify5         | | | | |
-| verify10        | | | | |
-| verify15        | | | | |
-| verify20        | | | | |
-| verifyCalldata1 | | | | |
-| verifyCalldata5 | | | | |
-| verifyCalldata15 | | | | |
-| verifyCalldata20 | | | | |
-| multiProof      | | | | |
-| multiProofCalldata | | | | |
+Gas consumption evaluation of  contracts related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
+
+> Note: *As gas consumption of **verify** function depends on proof size there several test for each function with different amounts of elements in proof and corresponding amount of leaves(elements in tree)*
+> 1. 5 elements in the proof = 32 leaves in tree
+> 1. 10 elements in the proof = 1024 leaves in tree
+> 1. 15 elements in the proof = 32668 leaves in tree
+
+**Gas Usage Comparison**:
+
+| Function Name              | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|----------------------------|-----------|---------------|----------------|----------------|
+| verify_5_elements          | 2554      | 1783          | -              | Solady         |
+| verify_10_elements         | 4444      | 2863          | -              | Solady         |
+| verify_15_elements         | 6340      | 3943          | -              | Solady         |
+| verifyCalldata_5_elements  | 1685      | 1204 | | |
+| verifyCalldata_10_elements | 2916      | 1929 | | |
+| verifyCalldata_15_elements | 4159      | 2654 | | |
 </details>
 
 <details>
