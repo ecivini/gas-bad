@@ -7,6 +7,39 @@ import {SolmateMerkleProof} from "../../src/MerkleProof/SolmateMerkleProof.sol";
 contract SolmateMerkleProofTest is Test {
     bytes32[] proof_;
 
+    function testVerify5Elements(bytes32[5] memory proof, bytes32 leaf) public {
+        for (uint256 i = 0; i < proof.length; i++) {
+            proof_.push(proof[i]);
+        }
+        bytes32 root = processProof(proof_, leaf);
+        SolmateMerkleProof merkleProof5 = new SolmateMerkleProof(root);
+        assertEq(merkleProof5.verify(proof_, leaf), true);
+    }
+
+    function testVerify10Elements(
+        bytes32[10] memory proof,
+        bytes32 leaf
+    ) public {
+        for (uint256 i = 0; i < proof.length; i++) {
+            proof_.push(proof[i]);
+        }
+        bytes32 root = processProof(proof_, leaf);
+        SolmateMerkleProof merkleProof10 = new SolmateMerkleProof(root);
+        assertEq(merkleProof10.verify(proof_, leaf), true);
+    }
+
+    function testVerify15Elements(
+        bytes32[15] memory proof,
+        bytes32 leaf
+    ) public {
+        for (uint256 i = 0; i < proof.length; i++) {
+            proof_.push(proof[i]);
+        }
+        bytes32 root = processProof(proof_, leaf);
+        SolmateMerkleProof merkleProof15 = new SolmateMerkleProof(root);
+        assertEq(merkleProof15.verify(proof_, leaf), true);
+    }
+
     function testVerify5ElementsCalldata(
         bytes32[5] memory proof,
         bytes32 leaf
