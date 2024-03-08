@@ -173,10 +173,10 @@ Gas consumption evaluation of ECDSA related operations provided by the tested li
 
 Gas consumption evaluation of  contracts related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for this functionality.
 
-> Note: *As gas consumption of **verify** function depends on proof size there several test for each function with different amounts of elements in proof and corresponding amount of leaves(elements in tree)*
-> 1. 5 elements in the proof = 32 leaves in tree
-> 1. 10 elements in the proof = 1024 leaves in tree
-> 1. 15 elements in the proof = 32668 leaves in tree
+> Note: *As gas consumption of **verify** function depends on proof size there several test for each function with different amounts of elements in proof and corresponding amount of leafs(elements in tree)*
+> 1. 5 elements in the proof = 32 leafs in tree
+> 1. 10 elements in the proof = 1024 leafs in tree
+> 1. 15 elements in the proof = 32668 leafs in tree
 
 **Gas Usage Comparison**:
 
