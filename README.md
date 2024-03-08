@@ -185,9 +185,9 @@ Gas consumption evaluation of  contracts related operations provided by the test
 | verify_5_elements          | 2554      | 1783          | -              | Solady         |
 | verify_10_elements         | 4444      | 2863          | -              | Solady         |
 | verify_15_elements         | 6340      | 3943          | -              | Solady         |
-| verifyCalldata_5_elements  | 1685      | 1204 | | |
-| verifyCalldata_10_elements | 2916      | 1929 | | |
-| verifyCalldata_15_elements | 4159      | 2654 | | |
+| verifyCalldata_5_elements  | 1685      | 1204          | 1095           | Solmate        |
+| verifyCalldata_10_elements | 2916      | 1929          | 1820           | Solmate        |
+| verifyCalldata_15_elements | 4159      | 2654          | 2545           | Solmate        |
 </details>
 
 <details>
