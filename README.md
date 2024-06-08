@@ -76,19 +76,19 @@ Gas consumption evaluation of ERC1155 token-related operations provided by the t
 
 **Gas Usage Comparison**:
 
-| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
-|-----------------|-----------|---------------|----------------|----------------|
-| balanceOf       | 2547      | 2407          | 2485           | Solady  |
-| balanceOfBatch  | 16106     | 12566         | 14317          | Solady  |
-| burn            | 8784      | 8064          | 8156           | Solady  |
-| burnBatch       | 36684     | 33635         | 35648          | Solady  |
-| isApprovedForAll| 778       | 681           | 783            | Solady  |
-| mint            | 28155     | 27712         | 27871          | Solady  |
-| mintBatch       | 124178    | 121891        | 124104         | Solady  |
-| safeBatchTransferFrom | 151145 | 146637    | 148209         | Solady  |
-| safeTransferFrom | 34027    | 33141         | 33458          | Solady  |
-| setApprovalForAll | 24506   | 24367         | 24487          | Solady  |
-| uri             | 2945      | 540           | 566            | Solady  |
+| Function Name        | ERC1155P | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|----------------------|----------|--------------|--------|---------|----------------|
+| balanceOf            | 2504     | 2547         | 2407   | 2485    | Solady         |
+| balanceOfBatch       | 6460     | 16106        | 12566  | 14317   | ERC1155P       |
+| burn                 | 30356    | 30496        | 29776  | 29868   | Solady         |
+| burnBatch            | 39031    | 60076        | 57027  | 59040   | ERC1155P       |
+| isApprovedForAll     | 743      | 778          | 681    | 783     | Solady         |
+| mint                 | 49563    | 49651        | 49208  | 49367   | Solady         |
+| mintBatch            | 58518    | 147366       | 145079 | 147292  | ERC1155P       |
+| safeBatchTransferFrom| 66981    | 174969       | 170461 | 172033  | ERC1155P       |
+| safeTransferFrom     | 56088    | 56147        | 55261  | 55578   | Solady         |
+| setApprovalForAll    | 45758    | 45862        | 45723  | 45843   | Solady         |
+| uri                  | 567      | 2945         | 540    | 566     | Solady         |
 
 
 </details>
