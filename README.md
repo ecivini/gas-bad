@@ -74,6 +74,8 @@ Gas consumption evaluation of ERC721 token-related operations provided by the te
 
 Gas consumption evaluation of ERC1155 token-related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for ERC1155 functionality.
 
+[ERC1155P](https://github.com/0xth0mas/ERC1155P) is an implementation of ERC1155 that packs a user's minted amount and current balance for eight tokens into each storage slot to improve gas efficiency of projects that expect users to collect many different token ids as well as projects that are minting a single ERC1155 token id with limits on how many a single user may mint. The data packing introduces a limit of `type(uint16).max` that a single user may mint or own of each token. 
+
 **Gas Usage Comparison**:
 
 | Function Name        | ERC1155P | OpenZeppelin | Solady | Solmate | Gas Efficiency |
