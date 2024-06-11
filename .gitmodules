@@ -10,3 +10,6 @@
 [submodule "lib/solmate"]
 	path = lib/solmate
 	url = https://github.com/transmissions11/solmate
+[submodule "lib/ERC1155P"]
+	path = lib/ERC1155P
+	url = https://github.com/0xth0mas/ERC1155P

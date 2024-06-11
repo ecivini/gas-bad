@@ -74,21 +74,23 @@ Gas consumption evaluation of ERC721 token-related operations provided by the te
 
 Gas consumption evaluation of ERC1155 token-related operations provided by the tested libraries. By comparing gas usage, developers can make informed decisions about the most efficient library for ERC1155 functionality.
 
+[ERC1155P](https://github.com/0xth0mas/ERC1155P) is an implementation of ERC1155 that packs a user's minted amount and current balance for eight tokens into each storage slot to improve gas efficiency of projects that expect users to collect many different token ids as well as projects that are minting a single ERC1155 token id with limits on how many a single user may mint. The data packing introduces a limit of `type(uint16).max` that a single user may mint or own of each token. 
+
 **Gas Usage Comparison**:
 
-| Function Name   | OpenZeppelin | Solady | Solmate | Gas Efficiency |
-|-----------------|-----------|---------------|----------------|----------------|
-| balanceOf       | 2547      | 2407          | 2485           | Solady  |
-| balanceOfBatch  | 16106     | 12566         | 14317          | Solady  |
-| burn            | 8784      | 8064          | 8156           | Solady  |
-| burnBatch       | 36684     | 33635         | 35648          | Solady  |
-| isApprovedForAll| 778       | 681           | 783            | Solady  |
-| mint            | 28155     | 27712         | 27871          | Solady  |
-| mintBatch       | 124178    | 121891        | 124104         | Solady  |
-| safeBatchTransferFrom | 151145 | 146637    | 148209         | Solady  |
-| safeTransferFrom | 34027    | 33141         | 33458          | Solady  |
-| setApprovalForAll | 24506   | 24367         | 24487          | Solady  |
-| uri             | 2945      | 540           | 566            | Solady  |
+| Function Name        | ERC1155P | OpenZeppelin | Solady | Solmate | Gas Efficiency |
+|----------------------|----------|--------------|--------|---------|----------------|
+| balanceOf            | 2504     | 2547         | 2407   | 2485    | Solady         |
+| balanceOfBatch       | 6460     | 16106        | 12566  | 14317   | ERC1155P       |
+| burn                 | 30356    | 30496        | 29776  | 29868   | Solady         |
+| burnBatch            | 39031    | 60076        | 57027  | 59040   | ERC1155P       |
+| isApprovedForAll     | 743      | 778          | 681    | 783     | Solady         |
+| mint                 | 49563    | 49651        | 49208  | 49367   | Solady         |
+| mintBatch            | 58518    | 147366       | 145079 | 147292  | ERC1155P       |
+| safeBatchTransferFrom| 66981    | 174969       | 170461 | 172033  | ERC1155P       |
+| safeTransferFrom     | 56088    | 56147        | 55261  | 55578   | Solady         |
+| setApprovalForAll    | 45758    | 45862        | 45723  | 45843   | Solady         |
+| uri                  | 567      | 2945         | 540    | 566     | Solady         |
 
 
 </details>
